@@ -1,6 +1,6 @@
 # Simple UdpPortForwarder
 
-Download the binaries to "C:\Downloads\UdpPortForwarder.exe" and use the following script.
+Download and extract the binaries to "C:\Tools\UdpPortForwarder.exe" and use the following script.
 (You can change the download path in the script)
 
 ```powershell
@@ -24,7 +24,7 @@ iex "Remove-NetFireWallRule -DisplayName 'WSL 2 Ports' ";
 iex "New-NetFireWallRule -DisplayName 'WSL 2 Ports' -Direction Outbound -LocalPort $ports_a -Action Allow -Protocol UDP";
 iex "New-NetFireWallRule -DisplayName 'WSL 2 Ports' -Direction Inbound -LocalPort $ports_a -Action Allow -Protocol UDP";
 
-& "C:\Downloads\UdpPortForwarder.exe" $WSLip @UDPports
+& "C:\Tools\UdpPortForwarder.exe" $WSLip @UDPports
 ```
 
 As an alternative you can clone the project, install cargo and use the following
